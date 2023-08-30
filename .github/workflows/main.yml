@@ -20,10 +20,10 @@ jobs:
         # publishes Blazor project to the release-folder
     - name: Restore dependencies
       run: dotnet restore
-#    - name: build
-#      run: dotnet build --configuration Release --no-restore
-#    - name: test
-#      run: dotnet test --no-build --verbosity normal
+    - name: build
+      run: dotnet build --configuration Release --no-restore
+    - name: test
+      run: dotnet test --no-build --verbosity normal
     - name: Publish .NET Core Project
       run: dotnet publish BlazorGrpc.soln -c Release -o website
     - name: upload a build artifact
